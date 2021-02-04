@@ -1,3 +1,9 @@
+// 0 - pac-dots
+// 1 - wall
+// 2 - ghost-lairs
+// 3 - power-pellets
+// 4 - empty spaces
+
 // prettier-ignore
 export const layout = [
   1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
