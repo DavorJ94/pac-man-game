@@ -87,6 +87,8 @@ function controlPacmanMovement(e) {
 
       break;
   }
+  checkIfGameOver();
+  checkIfWin();
 }
 
 document.addEventListener("keydown", controlPacmanMovement);
@@ -166,5 +168,56 @@ function moveGhost(ghost) {
     if (ghost.isScared) {
       squares[ghost.currentIndex].classList.add("scared-ghost");
     }
+
+    if (
+      ghost.isScared &&
+      squares[ghost.currentIndex].classList.contains("pacman")
+    ) {
+      squares[ghost.currentIndex].classList.remove(
+        "ghost",
+        "scared-ghost",
+        ghost.className
+      );
+      ghost.currentIndex = ghost.startIndex;
+      score += 100;
+      document.getElementById("score").innerText = " " + score;
+      squares[ghost.currentIndex].classList.add(
+        "ghost",
+        "scared-ghost",
+        ghost.className
+      );
+    }
   }, ghost.speed);
+}
+
+function checkIfGameOver() {
+  if (
+    squares[pacmanCurrentPosition].classList.contains("ghost") &&
+    !squares[pacmanCurrentPosition].classList.contains("scared-ghost")
+  ) {
+    ghosts.forEach((ghost) => clearInterval(ghost.timerId));
+
+    document.removeEventListener("keydown", controlPacmanMovement);
+    document.removeEventListener("keydown", pacDotEaten);
+    document.removeEventListener("keydown", powerPelletEaten);
+
+    document.querySelector(
+      "H3"
+    ).innerHTML = `GAME OVER! Your score was ${score}. 😔`;
+    document.querySelector("H3").style = "text-align: center; color: red";
+  }
+}
+
+function checkIfWin() {
+  if (score >= 2000) {
+    ghosts.forEach((ghost) => clearInterval(ghost.timerId));
+
+    document.removeEventListener("keydown", controlPacmanMovement);
+    document.removeEventListener("keydown", pacDotEaten);
+    document.removeEventListener("keydown", powerPelletEaten);
+    document.querySelector(
+      "H3"
+    ).innerHTML = `YOU WIN! You've reached more than ${score} point(s). 🎉`;
+    document.querySelector("H3").style = "text-align: center; color: green";
+  }
 }
