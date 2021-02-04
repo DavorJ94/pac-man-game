@@ -1,6 +1,6 @@
 import { layout } from "./layoutArray.js";
-
-export function createBoard(squares, grid) {
+import { squares, grid } from "./index.js";
+export function createBoard() {
   for (let i = 0; i < layout.length; i++) {
     let tempDiv = document.createElement("DIV");
     squares.push(tempDiv);

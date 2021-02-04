@@ -1,5 +1,5 @@
-import { ghosts } from "./ghosts.js";
 import { width, squares } from "./index.js";
+import { score, modifyScore } from "./index.js";
 export function moveGhost(ghost) {
   const movingDirection = [1, -1, -width, width];
   let currentDirection =
@@ -35,7 +35,7 @@ export function moveGhost(ghost) {
         ghost.className
       );
       ghost.currentIndex = ghost.startIndex;
-      score += 100;
+      modifyScore(100);
       document.getElementById("score").innerText = " " + score;
       squares[ghost.currentIndex].classList.add(
         "ghost",

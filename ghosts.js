@@ -8,7 +8,7 @@ class Ghost {
     this.timerId = NaN;
   }
 }
-// ghosts section
+
 export const ghosts = [
   new Ghost("pinky", 348, 250),
   new Ghost("blinky", 376, 300),
