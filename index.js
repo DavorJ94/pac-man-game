@@ -204,7 +204,7 @@ function checkIfGameOver() {
     document.querySelector(
       "H3"
     ).innerHTML = `GAME OVER! Your score was ${score}. 😔`;
-    document.querySelector("H3").style = "text-align: center; color: red";
+    document.querySelector("H3").style = "color: red";
   }
 }
 
@@ -218,6 +218,6 @@ function checkIfWin() {
     document.querySelector(
       "H3"
     ).innerHTML = `YOU WIN! You've reached more than ${score} point(s). 🎉`;
-    document.querySelector("H3").style = "text-align: center; color: green";
+    document.querySelector("H3").style = "color: green";
   }
 }

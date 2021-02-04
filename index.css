@@ -8,6 +8,10 @@ body {
 .container {
   margin: 0;
 }
+h3 {
+  text-align: center;
+  font-size: 1.6rem;
+}
 .grid {
   display: flex;
   flex-wrap: wrap;
