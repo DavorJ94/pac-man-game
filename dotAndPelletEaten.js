@@ -3,6 +3,8 @@ import { pacmanCurrentPosition } from "./controlPacmanMovement.js";
 import { ghosts } from "./ghosts.js";
 import { score, modifyScore } from "./index.js";
 
+// Note that main score is in index.js, this and other modules are just modifiers
+
 export function pacDotEaten() {
   if (squares[pacmanCurrentPosition].classList.contains("pac-dot")) {
     modifyScore(1);
