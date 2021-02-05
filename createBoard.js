@@ -1,5 +1,6 @@
 import { layout } from "./layoutArray.js";
 import { squares, grid } from "./index.js";
+
 export function createBoard() {
   for (let i = 0; i < layout.length; i++) {
     let tempDiv = document.createElement("DIV");

@@ -4,6 +4,7 @@ import {
   pacmanCurrentPosition,
 } from "./controlPacmanMovement.js";
 import { ghosts } from "./ghosts.js";
+import { anotherInterval } from "./ghostMovement.js";
 import { pacDotEaten, powerPelletEaten } from "./dotAndPelletEaten.js";
 import { score } from "./index.js";
 
@@ -13,6 +14,7 @@ export function checkIfGameOver() {
     !squares[pacmanCurrentPosition].classList.contains("scared-ghost")
   ) {
     ghosts.forEach((ghost) => clearInterval(ghost.timerId));
+    clearInterval(anotherInterval); // This interval is for faster update of eaten ghosts
 
     document.removeEventListener("keydown", controlPacmanMovement);
     document.removeEventListener("keydown", pacDotEaten);
@@ -28,6 +30,7 @@ export function checkIfGameOver() {
 export function checkIfWin() {
   if (score >= 1500) {
     ghosts.forEach((ghost) => clearInterval(ghost.timerId));
+    clearInterval(anotherInterval); // This interval is for faster update of eaten ghosts
 
     document.removeEventListener("keydown", controlPacmanMovement);
     document.removeEventListener("keydown", pacDotEaten);

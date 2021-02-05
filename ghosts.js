@@ -10,8 +10,8 @@ class Ghost {
 }
 
 export const ghosts = [
-  new Ghost("pinky", 348, 250),
-  new Ghost("blinky", 376, 300),
-  new Ghost("inky", 351, 350),
-  new Ghost("clyde", 379, 400),
+  new Ghost("pinky", 348, 150),
+  new Ghost("blinky", 376, 200),
+  new Ghost("inky", 351, 250),
+  new Ghost("clyde", 379, 300),
 ];

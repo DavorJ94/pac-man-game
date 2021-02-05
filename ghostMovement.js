@@ -1,5 +1,7 @@
 import { width, squares } from "./index.js";
 import { score, modifyScore } from "./index.js";
+import { checkIfGameOver, checkIfWin } from "./winLoseCheck.js";
+
 export function moveGhost(ghost) {
   const movingDirection = [1, -1, -width, width];
   let currentDirection =
@@ -24,7 +26,11 @@ export function moveGhost(ghost) {
     if (ghost.isScared) {
       squares[ghost.currentIndex].classList.add("scared-ghost");
     }
-
+  }, ghost.speed);
+}
+export let anotherInterval;
+export function updateEatenGhost(ghost) {
+  let anotherInterval = setInterval(function () {
     if (
       ghost.isScared &&
       squares[ghost.currentIndex].classList.contains("pacman")
@@ -43,5 +49,7 @@ export function moveGhost(ghost) {
         ghost.className
       );
     }
-  }, ghost.speed);
+    checkIfGameOver();
+    checkIfWin();
+  }, 100);
 }

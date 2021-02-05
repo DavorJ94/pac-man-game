@@ -1,6 +1,5 @@
 import { checkIfGameOver, checkIfWin } from "./winLoseCheck.js";
 import { squares, width } from "./index.js";
-import { ghosts } from "./ghosts.js";
 
 export let pacmanCurrentPosition = 489;
 
@@ -60,6 +59,6 @@ export function controlPacmanMovement(e) {
 
       break;
   }
-  checkIfGameOver(squares, pacmanCurrentPosition, ghosts);
-  checkIfWin(ghosts);
+  checkIfGameOver();
+  checkIfWin();
 }
