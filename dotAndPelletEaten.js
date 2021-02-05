@@ -1,4 +1,5 @@
-import { squares, pacmanCurrentPosition } from "./index.js";
+import { squares } from "./index.js";
+import { pacmanCurrentPosition } from "./controlPacmanMovement.js";
 import { ghosts } from "./ghosts.js";
 import { score, modifyScore } from "./index.js";
 

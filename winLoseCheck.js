@@ -1,8 +1,8 @@
+import { squares } from "./index.js";
 import {
-  squares,
-  pacmanCurrentPosition,
   controlPacmanMovement,
-} from "./index.js";
+  pacmanCurrentPosition,
+} from "./controlPacmanMovement.js";
 import { ghosts } from "./ghosts.js";
 import { pacDotEaten, powerPelletEaten } from "./dotAndPelletEaten.js";
 import { score } from "./index.js";
@@ -26,7 +26,7 @@ export function checkIfGameOver() {
 }
 
 export function checkIfWin() {
-  if (score >= 2000) {
+  if (score >= 1500) {
     ghosts.forEach((ghost) => clearInterval(ghost.timerId));
 
     document.removeEventListener("keydown", controlPacmanMovement);
