@@ -1,6 +1,6 @@
 import { ghosts } from "./ghosts.js";
 import { createBoard } from "./createBoard.js";
-import { moveGhost } from "./ghostMovement.js";
+import { moveGhost, updateEatenGhost } from "./ghostMovement.js";
 import {
   controlPacmanMovement,
   pacmanCurrentPosition,
@@ -18,8 +18,6 @@ export const grid = document.querySelector(".grid");
 //creating board
 createBoard();
 
-// export let pacmanCurrentPosition = 489;
-
 squares[pacmanCurrentPosition].classList.add("pacman");
 
 // adding event listeners, check modules for details
@@ -36,3 +34,4 @@ ghosts.forEach((ghost) => {
 
 // move ghosts
 ghosts.forEach((ghost) => moveGhost(ghost));
+ghosts.forEach((ghost) => updateEatenGhost(ghost));
