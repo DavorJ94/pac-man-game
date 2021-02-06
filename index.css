@@ -10,11 +10,20 @@ body {
   margin: 0;
   background-color: rgba(0, 0, 0, 0.8);
   padding: 0 30px;
+  width: 500px;
+  text-align: center;
 }
 h3 {
   text-align: center;
   font-size: 1.6rem;
   color: white;
+}
+
+img {
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 40px;
+  mix-blend-mode: difference;
 }
 .grid {
   margin: 0 auto;
@@ -22,7 +31,7 @@ h3 {
   flex-wrap: wrap;
   width: 420px;
   border: solid black;
-  background-color: white;
+  background-color: black;
   opacity: 0.95;
 }
 
@@ -32,23 +41,33 @@ h3 {
 }
 
 .pac-dot {
-  background-color: green;
-  border: 5px solid white;
+  background-color: yellow;
+  border-radius: 7.5px;
+  border: 5px solid black;
   box-sizing: border-box;
 }
 
 .wall {
-  background-color: blue;
+  background: rgb(49, 80, 222);
+  background: radial-gradient(
+    circle,
+    rgba(49, 80, 222, 1) 0%,
+    rgba(19, 114, 230, 0.3) 100%
+  );
 }
 
 .power-pellet {
-  background-color: green;
-  border-radius: 7.5px;
+  background-color: yellow;
+  border-radius: 15px;
+  border: 2.5px solid black;
+  box-sizing: border-box;
 }
 
 .pacman {
-  background-color: orange;
+  background: url(./img/pacmanimage.png);
+  background-size: cover;
   border-radius: 7.5px;
+  background-color: black;
   border: none;
 }
 
@@ -61,21 +80,36 @@ h3 {
 }
 
 .pinky {
-  background-color: pink;
+  background: url(./img/ghost_pinky.png);
+  background-size: cover;
 }
 
 .blinky {
-  background-color: cyan;
+  background: url(./img/ghost_blinky.png);
+  background-size: cover;
 }
 
 .inky {
-  background-color: purple;
+  background: url(./img/ghost_inky.png);
+  background-size: cover;
 }
 
 .clyde {
-  background-color: brown;
+  background: url(./img/ghost_clyde.png);
+  background-size: cover;
 }
 
 .scared-ghost {
-  background-color: red;
+  background: url(./img/ghost_scared.png);
+  background-size: cover;
+}
+@-webkit-keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073,
+      0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+  }
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6,
+      0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+  }
 }
