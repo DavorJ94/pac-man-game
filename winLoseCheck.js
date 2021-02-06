@@ -38,7 +38,7 @@ export function checkIfWin() {
 
     document.querySelector(
       "H3"
-    ).innerText = `YOU WIN! You've reached more than ${score} point(s). 🎉`;
+    ).innerHTML = `YOU WIN! <br> You've reached more than ${score} point(s). 🎉`;
     document.querySelector("H3").style = "color: green";
   }
 }
