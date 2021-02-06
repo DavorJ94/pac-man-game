@@ -49,7 +49,12 @@ export function updateEatenGhost(ghost) {
         ghost.className
       );
     }
+    if (ghost.isScared) {
+      document.querySelector(".grid").style.boxShadow = "0px 0px 20px 2px red";
+    } else {
+      document.querySelector(".grid").style.boxShadow = "";
+    }
     checkIfGameOver();
     checkIfWin();
-  }, 100);
+  }, 50);
 }

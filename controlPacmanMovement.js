@@ -15,6 +15,7 @@ export function controlPacmanMovement(e) {
         squares[pacmanCurrentPosition].classList.remove("pacman");
         pacmanCurrentPosition -= width;
         squares[pacmanCurrentPosition].classList.add("pacman");
+        document.querySelector(".pacman").style.transform = "rotate(-90deg)";
       }
       break;
     case "ArrowRight":
@@ -22,6 +23,7 @@ export function controlPacmanMovement(e) {
         squares[pacmanCurrentPosition].classList.remove("pacman");
         pacmanCurrentPosition = 364;
         squares[pacmanCurrentPosition].classList.add("pacman");
+        document.querySelector(".pacman").style.transform = "rotateY(0deg)";
       }
       if (
         moveRight.className !== "wall" &&
@@ -30,6 +32,7 @@ export function controlPacmanMovement(e) {
         squares[pacmanCurrentPosition].classList.remove("pacman");
         pacmanCurrentPosition += 1;
         squares[pacmanCurrentPosition].classList.add("pacman");
+        document.querySelector(".pacman").style.transform = "rotateY(0deg)";
       }
       break;
     case "ArrowDown":
@@ -40,6 +43,7 @@ export function controlPacmanMovement(e) {
         squares[pacmanCurrentPosition].classList.remove("pacman");
         pacmanCurrentPosition += width;
         squares[pacmanCurrentPosition].classList.add("pacman");
+        document.querySelector(".pacman").style.transform = "rotate(90deg)";
       }
       break;
     case "ArrowLeft":
@@ -47,6 +51,7 @@ export function controlPacmanMovement(e) {
         squares[pacmanCurrentPosition].classList.remove("pacman");
         pacmanCurrentPosition = 391;
         squares[pacmanCurrentPosition].classList.add("pacman");
+        document.querySelector(".pacman").style.transform = "rotateY(-180deg)";
       }
       if (
         moveLeft.className !== "wall" &&
@@ -55,6 +60,7 @@ export function controlPacmanMovement(e) {
         squares[pacmanCurrentPosition].classList.remove("pacman");
         pacmanCurrentPosition -= 1;
         squares[pacmanCurrentPosition].classList.add("pacman");
+        document.querySelector(".pacman").style.transform = "rotateY(-180deg)";
       }
 
       break;
