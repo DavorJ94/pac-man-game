@@ -26,6 +26,8 @@ export function moveGhost(ghost) {
     if (ghost.isScared) {
       squares[ghost.currentIndex].classList.add("scared-ghost");
     }
+
+    checkIfGameOver();
   }, ghost.speed);
 }
 export let anotherInterval;
@@ -54,7 +56,9 @@ export function updateEatenGhost(ghost) {
     } else {
       document.querySelector(".grid").style.boxShadow = "";
     }
-    checkIfGameOver();
+    if (checkIfGameOver()) {
+      clearInterval(anotherInterval);
+    }
     checkIfWin();
   }, 50);
 }

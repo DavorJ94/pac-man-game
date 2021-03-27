@@ -24,6 +24,7 @@ export function checkIfGameOver() {
       "H3"
     ).innerText = `GAME OVER! Your score was ${score}. 😔`;
     document.querySelector("H3").style = "color: red";
+    return true;
   }
 }
 

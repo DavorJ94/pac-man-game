@@ -62,7 +62,6 @@ export function controlPacmanMovement(e) {
         squares[pacmanCurrentPosition].classList.add("pacman");
         document.querySelector(".pacman").style.transform = "rotateY(-180deg)";
       }
-
       break;
   }
   checkIfGameOver();

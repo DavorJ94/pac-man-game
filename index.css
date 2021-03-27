@@ -113,3 +113,70 @@ img {
       0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
   }
 }
+
+@media (max-width: 550px) {
+  .container {
+    margin: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 0 0;
+    width: 800px;
+    text-align: center;
+  }
+  h3 {
+    text-align: center;
+    font-size: 1.6rem;
+    color: white;
+  }
+
+  img {
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 40px;
+    mix-blend-mode: difference;
+  }
+  .grid {
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    width: 420px;
+    border: solid black;
+    background-color: black;
+    opacity: 0.95;
+  }
+
+  .grid div {
+    width: 15px;
+    height: 15px;
+  }
+
+  .pac-dot {
+    background-color: yellow;
+    border-radius: 7.5px;
+    border: 5px solid black;
+    box-sizing: border-box;
+  }
+
+  .wall {
+    background: rgb(49, 80, 222);
+    background: radial-gradient(
+      circle,
+      rgba(49, 80, 222, 1) 0%,
+      rgba(19, 114, 230, 0.3) 100%
+    );
+  }
+
+  .power-pellet {
+    background-color: yellow;
+    border-radius: 15px;
+    border: 2.5px solid black;
+    box-sizing: border-box;
+  }
+
+  .pacman {
+    background: url(./img/pacmanimage.png);
+    background-size: cover;
+    border-radius: 7.5px;
+    background-color: black;
+    border: none;
+  }
+}
