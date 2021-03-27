@@ -7,6 +7,7 @@ import { ghosts } from "./ghosts.js";
 import { anotherInterval } from "./ghostMovement.js";
 import { pacDotEaten, powerPelletEaten } from "./dotAndPelletEaten.js";
 import { score } from "./index.js";
+import modalFunction from "./modalFunction.js";
 
 export function checkIfGameOver() {
   if (
@@ -20,10 +21,7 @@ export function checkIfGameOver() {
     document.removeEventListener("keydown", pacDotEaten);
     document.removeEventListener("keydown", powerPelletEaten);
 
-    document.querySelector(
-      "H3"
-    ).innerText = `GAME OVER! Your score was ${score}. 😔`;
-    document.querySelector("H3").style = "color: red";
+    modalFunction(score, false);
     return true;
   }
 }
@@ -36,10 +34,6 @@ export function checkIfWin() {
     document.removeEventListener("keydown", controlPacmanMovement);
     document.removeEventListener("keydown", pacDotEaten);
     document.removeEventListener("keydown", powerPelletEaten);
-
-    document.querySelector(
-      "H3"
-    ).innerHTML = `YOU WIN! <br> You've reached more than ${score} point(s). 🎉`;
-    document.querySelector("H3").style = "color: green";
+    modalFunction(score, true);
   }
 }

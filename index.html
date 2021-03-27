@@ -1,22 +1,41 @@
-<html>
+<!DOCTYPE html>
+
+<html lang="en">
   <head>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css"
-    />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="index.css" />
     <title>Pac-Man Game</title>
     <link
       rel="icon"
       href="http://www.downloadclipart.net/medium/52159-hungry-mrs-pacman-images.png"
     />
+    <script type="module" src="index.js" defer></script>
   </head>
   <body>
+    <div id="myModal" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content">
+        <h1 class="gameOver">GAME OVER!</h1>
+        <h3 class="endScore">Your score was: <span id="scoreModal">0</span></h3>
+        <p class="tryAgain">Try again? &#128579;</p>
+        <button id="start">Restart</button>
+        <span class="closeModalWindow"></span>
+      </div>
+    </div>
     <div class="container">
       <h3>Score:<span id="score"></span></h3>
       <div class="grid"></div>
+      <div class="controlButtons">
+        <button class="btns upButton">&#8593;</button>
+        <div class="leftRightBtn">
+          <button class="btns leftButton">&#8592;</button>
+          <button class="btns rightButton">&#8594;</button>
+        </div>
+        <button class="btns downButton">&#8595;</button>
+      </div>
       <img src="./img/pacman logo.png" alt="logo" />
-      <script type="module" src="index.js"></script>
     </div>
   </body>
 </html>

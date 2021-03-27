@@ -9,6 +9,7 @@ export function controlPacmanMovement(e) {
   const moveDown = squares[pacmanCurrentPosition + width];
   const moveLeft = squares[pacmanCurrentPosition - 1];
   const moveRight = squares[pacmanCurrentPosition + 1];
+
   switch (e.key) {
     case "ArrowUp":
       if (moveUp.className !== "wall" && moveUp.className !== "ghost-lair") {

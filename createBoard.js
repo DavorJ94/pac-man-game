@@ -1,7 +1,7 @@
-import { layout } from "./layoutArray.js";
 import { squares, grid } from "./index.js";
-
+import { layout } from "./layoutArray.js";
 export function createBoard() {
+  grid.innerHTML = "";
   for (let i = 0; i < layout.length; i++) {
     let tempDiv = document.createElement("DIV");
     squares.push(tempDiv);
