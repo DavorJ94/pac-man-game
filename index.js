@@ -7,10 +7,6 @@ import {
 } from "./controlPacmanMovement.js";
 import { pacDotEaten, powerPelletEaten } from "./dotAndPelletEaten.js";
 
-window.screen.orientation.lock("portrait").then(
-  (success) => null,
-  (failure) => null
-);
 export const width = 28;
 const leftButton = document.querySelector(".leftButton");
 const rightButton = document.querySelector(".rightButton");
