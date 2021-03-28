@@ -56,9 +56,10 @@ export function updateEatenGhost(ghost) {
     } else {
       document.querySelector(".grid").style.boxShadow = "";
     }
-    if (checkIfGameOver()) {
+    if (checkIfGameOver() || checkIfWin()) {
       clearInterval(anotherInterval);
+      checkIfGameOver();
+      checkIfWin();
     }
-    checkIfWin();
   }, 50);
 }

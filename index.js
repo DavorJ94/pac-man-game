@@ -2,8 +2,8 @@ import { ghosts } from "./ghosts.js";
 import { createBoard } from "./createBoard.js";
 import { moveGhost, updateEatenGhost } from "./ghostMovement.js";
 import {
-  controlPacmanMovement,
   pacmanCurrentPosition,
+  controlPacmanMovement,
 } from "./controlPacmanMovement.js";
 import { pacDotEaten, powerPelletEaten } from "./dotAndPelletEaten.js";
 
@@ -12,10 +12,10 @@ const leftButton = document.querySelector(".leftButton");
 const rightButton = document.querySelector(".rightButton");
 const upButton = document.querySelector(".upButton");
 const downButton = document.querySelector(".downButton");
-const modal = document.querySelector("#myModal");
 const startBtn = document.querySelector("#start");
 export let squares = [];
 export let score = 0;
+
 export function modifyScore(value) {
   score += value;
 }
@@ -52,8 +52,6 @@ downButton.onclick = function () {
 
 // adding event listeners, check modules for details
 document.addEventListener("keydown", controlPacmanMovement);
-
-document.addEventListener("keydown", pacDotEaten);
 
 document.addEventListener("keydown", powerPelletEaten);
 

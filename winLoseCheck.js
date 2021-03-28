@@ -35,5 +35,6 @@ export function checkIfWin() {
     document.removeEventListener("keydown", pacDotEaten);
     document.removeEventListener("keydown", powerPelletEaten);
     modalFunction(score, true);
+    return true;
   }
 }
