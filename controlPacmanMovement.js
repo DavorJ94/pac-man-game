@@ -4,7 +4,7 @@ import { pacDotEaten, powerPelletEaten } from "./dotAndPelletEaten.js";
 export let pacmanCurrentPosition = 487;
 let direction = 1;
 
-const pacmanSpeed = 100;
+const pacmanSpeed = 150;
 
 let movement = setInterval(move, pacmanSpeed);
 
@@ -90,8 +90,8 @@ export function controlPacmanMovement(e) {
         clearInterval(movement);
         direction = 1;
         movement = setInterval(move, pacmanSpeed);
-        break;
       }
+      break;
     case "ArrowDown":
       if (
         moveDown.className !== "wall" &&
@@ -100,8 +100,8 @@ export function controlPacmanMovement(e) {
         clearInterval(movement);
         direction = width;
         movement = setInterval(move, pacmanSpeed);
-        break;
       }
+      break;
     case "ArrowLeft":
       if (
         moveLeft.className !== "wall" &&
@@ -110,14 +110,16 @@ export function controlPacmanMovement(e) {
         clearInterval(movement);
         direction = -1;
         movement = setInterval(move, pacmanSpeed);
-        break;
       }
+      break;
     case "ArrowUp":
       if (moveUp.className !== "wall" && moveUp.className !== "ghost-lair") {
         clearInterval(movement);
         direction = -width;
         movement = setInterval(move, pacmanSpeed);
-        break;
       }
+      break;
+    default:
+      break;
   }
 }
